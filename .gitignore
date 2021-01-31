@@ -10,11 +10,13 @@ node_modules
 
 # production
 /build
+package-lock.json
 
 # misc
 .DS_Store
 .env.babelsheet
 .env
+.env.development
 
 
 npm-debug.log*

@@ -1,9 +1,8 @@
+import { IPaginationLinks } from "./pagination";
 import { IProduct } from "./product";
 
 export interface IProductsData {
-    data: {
-        items: IProduct[]
-    }
+    items: IProduct[]
     meta: {
         totalItems: number;
         itemCount: number;
@@ -12,10 +11,5 @@ export interface IProductsData {
         currentPage: string
 
     }
-    links: {
-        first: string;
-        last: string;
-        next: string;
-        previous: string;
-    }
+    links: IPaginationLinks
 }
