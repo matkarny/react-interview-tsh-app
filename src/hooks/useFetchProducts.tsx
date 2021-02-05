@@ -1,7 +1,7 @@
 
 import { IPaginationLinks } from 'interfaces/pagination';
 import { IProduct } from 'interfaces/product';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AppService from 'services/AppService';
 import notification from 'antd/lib/notification/index';
 import { IProductsData } from 'interfaces/data';

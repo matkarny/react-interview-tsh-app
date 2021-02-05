@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import './theme.scss';
+
+body {
+    font-family: $default-font;
+    color:$gray-darkest;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    
+}

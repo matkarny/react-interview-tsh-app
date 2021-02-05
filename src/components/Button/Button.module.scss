@@ -1,0 +1,50 @@
+@import "../../app/theme.scss";
+
+.buttonPrimary {
+  border-radius: 4px !important;
+
+  :global(.ant-btn-primary) {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
+    &:disabled {
+      background-color: $disabled-color;
+      border-color: $disabled-color;
+      color: white;
+      &:hover,
+      &:focus,
+      & :active {
+        background-color: $disabled-color;
+        border-color: $disabled-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.buttonOutlined {
+  border-radius: 4px !important;
+  :global(.ant-btn-default) {
+    color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+      color: $hover-color;
+      border-color: $hover-color;
+    }
+    &:disabled {
+      border-color: $disabled-color;
+      color: $disabled-color;
+      background-color: transparent;
+      &:hover,
+      &:focus,
+      & :active {
+        border-color: $disabled-color;
+        color: $disabled-color;
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../app/theme.scss";
+
+.search {
+  border-radius: 8px !important;
+  :global(.ant-input) {
+    &::placeholder {
+      color: $font-color !important;
+    }
+  }
+}
+
+.searchWrapper {
+  :global(.ant-input-affix-wrapper) {
+    border-color: $border-color;
+    &:focus {
+      border-color: $border-color !important;
+    }
+    &:hover {
+      border-color: $border-color !important;
+    }
+  }
+
+  :global(.ant-input-affix-wrapper-focused) {
+    box-shadow: none !important;
+  }
+}
