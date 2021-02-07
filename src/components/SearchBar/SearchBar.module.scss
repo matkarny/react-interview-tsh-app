@@ -1,7 +1,7 @@
 @import "../../app/theme.scss";
 
 .search {
-  border-radius: 8px !important;
+  border-radius: 2*$border-radius !important;
   :global(.ant-input) {
     &::placeholder {
       color: $font-color !important;

@@ -1,9 +1,15 @@
-
-
+$default-font: 'Nunito', sans-serif;
+$font-size: 14px;
+$line-height: 16px;
+$font-weight: 600;
+$border-radius: 4px;
+$margin-size: 108px;
+$margin-size-mobile: 24px;
 
 $primary-color: #4460F7;
 $primary-color-darker: #2140E8;
 $alternative-color: #F9A52B;
+$star-outline: #B1B5C9;
 
 $gray-color: #B9BDCF;
 $gray-lighter: lighten(saturate(adjust-hue($gray-color, -1), 0.59), 12.94);
@@ -11,12 +17,9 @@ $gray-lightest: lighten(saturate(adjust-hue($gray-color, -1), 1.36), 18.24);
 $gray-darker: darken(desaturate(adjust-hue($gray-color, 2), 8.64), 16.08);
 $gray-darkest: darken(desaturate(adjust-hue($gray-color, -9), 13.19), 66.08);
 
-$default-font: 'Nunito', sans-serif;
-$font-size: 14px;
-$line-height: 16px;
-$font-weight: 600;
-
 $font-color: $gray-darkest;
 $hover-color: $primary-color-darker;
 $border-color: $gray-lighter;
-$disabled-color: $gray-darker
+$disabled-color: $gray-darker;
+
+$mobile-breakpoint: 576px;

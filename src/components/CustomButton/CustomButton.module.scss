@@ -1,12 +1,17 @@
 @import "../../app/theme.scss";
 
 .buttonPrimary {
-  border-radius: 4px !important;
+  width: 100%;
+  button {
+    width: 100%;
+  }
 
   :global(.ant-btn-primary) {
     background-color: $primary-color;
     border-color: $primary-color;
-    &:hover {
+    border-radius: $border-radius;
+    &:hover,
+    &:focus {
       background-color: $hover-color;
       border-color: $hover-color;
     }
@@ -26,11 +31,16 @@
 }
 
 .buttonOutlined {
-  border-radius: 4px !important;
+  width: 100%;
+  button {
+    width: 100%;
+  }
   :global(.ant-btn-default) {
     color: $primary-color;
     border-color: $primary-color;
-    &:hover {
+    border-radius: $border-radius;
+    &:hover,
+    &:focus {
       color: $hover-color;
       border-color: $hover-color;
     }

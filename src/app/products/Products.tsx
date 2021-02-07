@@ -5,7 +5,14 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from 'routing/AppRoute.enum';
 import { LoadingOutlined } from '@ant-design/icons';
 import { SearchBar } from 'components/SearchBar/SearchBar';
-import { CustomButton } from 'components/Button/Button';
+import { CustomButton } from 'components/CustomButton/CustomButton';
+import { Spinner } from 'components/Spinner/Spinner';
+import { CustomPagination } from 'components/CustomPagination/CustomPagination';
+import { CustomCheckbox } from 'components/CustomCheckbox/CustomCheckbox';
+import {Title} from 'components/Title/Title';
+import { ProductCard } from './components/ProductCard/ProductCard';
+import { Col, Row } from 'antd';
+import { PageContent } from './components/PageContent/PageContent';
 
 export const Products = () => {
   const { loading, products, getProducts} = useFetchProducts()
@@ -18,14 +25,12 @@ export const Products = () => {
   return (
     <>
       <h2>Products page</h2>
-      <SearchBar />
-      <CustomButton type="primary" disabled> Disabled button </CustomButton>
-      <CustomButton type="outlined" disabled> Disabled button </CustomButton>
-
       <Link to={AppRoute.login}> Login </Link>
-      <div>
-        {loading ? <LoadingOutlined style={{ fontSize: 24 }} spin /> : (products &&  products.length) ? products.map(product => <p>{product.name}</p>) : <p> no products</p> }
-      </div>
+      <PageContent>
+      <Row gutter={[32, 32]}>
+        {loading ? <LoadingOutlined style={{ fontSize: 24 }} spin /> : (products &&  products.length) ? products.map(product => <Col span={24} lg={6}><ProductCard {...product}/></Col>) : <p> no products</p> }
+      </Row>
+      </PageContent>
     </>
   );
 };

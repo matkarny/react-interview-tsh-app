@@ -1,0 +1,15 @@
+@import "../../app/theme.scss";
+
+.star{
+  margin-right: 10px;
+   > path {
+    fill: $alternative-color;
+  }
+}
+
+.starOutlined{
+  margin-right: 10px;
+  > path {
+   fill: $star-outline;
+ }
+}

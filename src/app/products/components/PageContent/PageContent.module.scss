@@ -1,0 +1,11 @@
+@import "../../../theme.scss";
+
+.content{
+  padding: $margin-size/2 $margin-size;
+  background-color: #F2F2F2;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: $margin-size-mobile
+  }
+
+}

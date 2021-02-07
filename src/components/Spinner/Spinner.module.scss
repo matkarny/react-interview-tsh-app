@@ -1,0 +1,13 @@
+@import "../../app/theme.scss";
+.spinnerWrapper{
+  position: relative;
+}
+
+.spinnerCircle{
+  position: absolute;
+  content: '';
+  border: solid $border-radius $border-color;
+  border-radius: 50%;
+  height: 56px;
+  width: 56px;
+}

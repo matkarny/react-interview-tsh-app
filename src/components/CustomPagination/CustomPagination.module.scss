@@ -1,0 +1,25 @@
+@import "../../app/theme.scss";
+
+.paginationWrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .firstPage{
+    padding-left: 0;
+  }
+  .lastPage{
+    padding-right: 0;
+  }
+  :global(.ant-pagination-item){
+    border: none
+  }
+  :global(.ant-pagination-next), :global(.ant-pagination-prev) {
+    display: none
+  }
+  :global( .ant-pagination-item-active){
+    a{
+      color: $primary-color
+    }
+  }
+ 
+}

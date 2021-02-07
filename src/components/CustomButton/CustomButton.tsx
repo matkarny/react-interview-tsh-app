@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Button.module.scss'
+import styles from './CustomButton.module.scss'
 import Button from 'antd/lib/button';
 
 interface IButton {
