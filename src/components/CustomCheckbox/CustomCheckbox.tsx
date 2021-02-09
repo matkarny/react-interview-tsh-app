@@ -8,6 +8,6 @@ interface ICustomCheckbox {
 }
 
 export const CustomCheckbox: React.FC<ICustomCheckbox> = ({ children }) => {
-    return <div ><Checkbox className={styles.checkboxWrapper}> {children}</Checkbox> </div>
+    return <Checkbox className={styles.checkboxWrapper}> {children}</Checkbox>
 
 };

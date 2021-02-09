@@ -1,15 +1,8 @@
 @import "../../app/theme.scss";
 
-.search {
-  border-radius: 2*$border-radius !important;
-  :global(.ant-input) {
-    &::placeholder {
-      color: $font-color !important;
-    }
-  }
-}
-
 .searchWrapper {
+  min-width: 300px;
+  max-width: 400px;
   :global(.ant-input-affix-wrapper) {
     border-color: $border-color;
     &:focus {
@@ -24,3 +17,13 @@
     box-shadow: none !important;
   }
 }
+.search {
+  border-radius: 2*$border-radius !important;
+  align-self: center;
+  :global(.ant-input) {
+    &::placeholder {
+      color: $font-color !important;
+    }
+  }
+}
+

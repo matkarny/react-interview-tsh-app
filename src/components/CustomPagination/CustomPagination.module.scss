@@ -11,7 +11,8 @@
     padding-right: 0;
   }
   :global(.ant-pagination-item){
-    border: none
+    border: none;
+    background-color:inherit;
   }
   :global(.ant-pagination-next), :global(.ant-pagination-prev) {
     display: none

@@ -1,6 +1,7 @@
 @import "../../app/theme.scss";
 
 .buttonPrimary {
+  align-self: center;
   width: 100%;
   button {
     width: 100%;
@@ -31,6 +32,7 @@
 }
 
 .buttonOutlined {
+  align-self: center;
   width: 100%;
   button {
     width: 100%;

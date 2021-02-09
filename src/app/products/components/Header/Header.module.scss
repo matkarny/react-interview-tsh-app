@@ -1,0 +1,48 @@
+@import "../../../theme.scss";
+
+.header{
+  position: relative;
+  display: flex;
+  padding: 48px $margin-size;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+
+  @include mobile{
+    padding: $margin-size/2 $margin-size-mobile;
+  }
+}
+
+.search{
+  @include mobile{
+    padding: 24px 0;
+    width: 100%;
+  }
+}
+
+.logo{
+  margin-right: $margin-size !important;
+}
+
+.checkboxWrapper{
+  display: flex;
+  gap: 10px;
+  margin-left:$margin-size-mobile;
+  margin-right: $margin-size;
+
+  @include mobile{
+    margin-left: 0;
+  }
+}
+
+.button{
+  position: absolute;
+  width: 88px;
+  right: $margin-size;
+  top: calc(($margin-size/2)*1.5);
+
+  @include mobile{
+    right: $margin-size-mobile;
+    top: $margin-size/2;
+  }
+}

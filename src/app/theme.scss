@@ -10,6 +10,7 @@ $primary-color: #4460F7;
 $primary-color-darker: #2140E8;
 $alternative-color: #F9A52B;
 $star-outline: #B1B5C9;
+$background-color: #F2F2F2;
 
 $gray-color: #B9BDCF;
 $gray-lighter: lighten(saturate(adjust-hue($gray-color, -1), 0.59), 12.94);
@@ -23,3 +24,9 @@ $border-color: $gray-lighter;
 $disabled-color: $gray-darker;
 
 $mobile-breakpoint: 576px;
+
+@mixin mobile{
+    @media (max-width: $mobile-breakpoint) {
+        @content;
+      }
+}

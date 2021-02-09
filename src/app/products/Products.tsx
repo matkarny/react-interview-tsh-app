@@ -13,6 +13,9 @@ import {Title} from 'components/Title/Title';
 import { ProductCard } from './components/ProductCard/ProductCard';
 import { Col, Row } from 'antd';
 import { PageContent } from './components/PageContent/PageContent';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
+import EmptyPage from './components/EmptyPage/EmptyPage';
 
 export const Products = () => {
   const { loading, products, getProducts} = useFetchProducts()
@@ -24,13 +27,13 @@ export const Products = () => {
   
   return (
     <>
-      <h2>Products page</h2>
-      <Link to={AppRoute.login}> Login </Link>
+      <Header />
       <PageContent>
-      <Row gutter={[32, 32]}>
-        {loading ? <LoadingOutlined style={{ fontSize: 24 }} spin /> : (products &&  products.length) ? products.map(product => <Col span={24} lg={6}><ProductCard {...product}/></Col>) : <p> no products</p> }
+      <Row gutter={[32, 32]} justify="center">
+        {loading ? <LoadingOutlined style={{ fontSize: 24 }} spin /> : (products &&  !!products.length) ? products.map(product => <Col span={24} lg={6}><ProductCard {...product}/></Col>) : <Col lg={12} span={24}><EmptyPage /></Col> }
       </Row>
       </PageContent>
+      {(products && !!products.length) && <Footer />}
     </>
   );
 };

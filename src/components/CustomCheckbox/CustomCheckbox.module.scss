@@ -1,6 +1,8 @@
 @import "../../app/theme.scss";
 
 .checkboxWrapper {
+    display: flex !important;
+    align-items: center;
   :global(.ant-checkbox){
     border-radius: $border-radius;
   }
