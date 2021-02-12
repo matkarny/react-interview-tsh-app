@@ -13,25 +13,26 @@ import { CustomModal } from 'components/CustomModal/CustomModal';
 
 
 
-export const ProductCard: React.FC<IProduct> = ({ image, name, description, rating }) => {
-    const { modalVisible, onOpen, onClose} = useModalVisible()
+export const ProductCard: React.FC<IProduct> = ({ image, name, description, rating, promo, active }) => {
+    const { modalVisible, onOpen, onClose } = useModalVisible()
     return <Card>
-        <img src={image} alt={`${name} picture`} className={styles.image}/>
+        <img src={image} alt={`${name} picture`} className={active ? styles.image : styles.imageDisabled} />
         <div className={styles.productCard}>
             <h3>{name}</h3>
             <p>{description}</p>
             <div>
-            <div className={styles.starsWrapper}>
-                {[...Array(rating)].map((s, i) => <Star key={`star${i}`}/>)}
-                {[...Array(5-rating)].map((s, i) => <Star key={`starOutlined${i}`} outlined />)}
-            </div>
-            <CustomButton type="primary" onClick={onOpen}> Show details </CustomButton>
+                <div className={styles.starsWrapper}>
+                    {[...Array(rating)].map((s, i) => <Star key={`star${i}`} />)}
+                    {[...Array(5 - rating)].map((s, i) => <Star key={`starOutlined${i}`} outlined />)}
+                </div>
+                <CustomButton type="primary" onClick={onOpen} disabled={!active}>{!active ? 'Unavailable' : 'Show details' }</CustomButton>
             </div>
         </div>
         <CustomModal visible={modalVisible} onClose={onClose} image={image}>
             <h3>{name}</h3>
             <p>{description}</p>
         </CustomModal>
-        </Card>
+        {promo && <span className={styles.promo}> Promo </span>}
+    </Card>
 
 };

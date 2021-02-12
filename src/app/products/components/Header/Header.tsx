@@ -13,6 +13,7 @@ import { CustomCheckbox } from 'components/CustomCheckbox/CustomCheckbox';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { useHistory } from 'react-router-dom';
 import { AppRoute } from 'routing/AppRoute.enum';
+import Logo from 'components/Logo/Logo';
 
 interface IHeader{
 }
@@ -20,7 +21,7 @@ interface IHeader{
 export const Header: React.FC<IHeader> = () => {
     const history = useHistory()
     return <div className={styles.header}>
-            <Title className={styles.logo}>join.tsh.io</Title>
+            <Logo className={styles.logo}/>
             <SearchBar className={styles.search}/>
             <div className={styles.checkboxWrapper}>
                 <CustomCheckbox> Active</CustomCheckbox>

@@ -1,11 +1,16 @@
 @import "../../app/theme.scss";
-
-.buttonPrimary {
+.button{
   align-self: center;
   width: 100%;
   button {
     width: 100%;
   }
+  :global(.ant-btn){
+    height: 38px;
+  }
+}
+.buttonPrimary {
+  @extend .button;
 
   :global(.ant-btn-primary) {
     background-color: $primary-color;
@@ -32,11 +37,8 @@
 }
 
 .buttonOutlined {
-  align-self: center;
-  width: 100%;
-  button {
-    width: 100%;
-  }
+  @extend .button;
+
   :global(.ant-btn-default) {
     color: $primary-color;
     border-color: $primary-color;

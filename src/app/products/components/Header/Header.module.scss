@@ -7,9 +7,10 @@
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
+  background-color: white;
 
   @include mobile{
-    padding: $margin-size/2 $margin-size-mobile;
+    padding: $small-margin-size $margin-size-mobile;
   }
 }
 
@@ -39,10 +40,10 @@
   position: absolute;
   width: 88px;
   right: $margin-size;
-  top: calc(($margin-size/2)*1.5);
+  top: calc(($small-margin-size)*1.5);
 
   @include mobile{
     right: $margin-size-mobile;
-    top: $margin-size/2;
+    top:$small-margin-size;
   }
 }

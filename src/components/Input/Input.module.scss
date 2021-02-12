@@ -1,0 +1,15 @@
+@import "../../app/theme.scss";
+
+.input{
+  border-radius: $border-radius-doubled;
+  height: $input-height;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  padding: 16px;
+  &:focus{
+    outline: none;
+  }
+  &::placeholder{
+    color: $disabled-color;
+  }
+}

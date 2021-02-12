@@ -1,28 +1,43 @@
+import { Button } from 'antd';
+import { CustomButton } from 'components/CustomButton/CustomButton';
+import Input from 'components/Input/Input';
+import Logo from 'components/Logo/Logo';
+import { Title } from 'components/Title/Title';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 
+import loginPicture from 'data/login-picture.png'
+import styles from './Login.module.scss'
+
 export const Login = () => {
+  const history = useHistory()
   return (
-    <>
-      <Link to={AppRoute.home}>Products page</Link>
-      <h2>Login</h2>
-      <form>
-        <div>
-          <label>
-            username:
-            <input name="username" />
-          </label>
+    <div className={styles.pageWrapper}>
+      <img src={loginPicture} alt="running man" className={styles.image}/>
+      <div className={styles.loginWrapper}>
+      <Logo className={styles.logo} />
+      <div className={styles.formWrapper}>
+      <Title size={30}>Login</Title>
+      <form onSubmit={() => history.push(AppRoute.home)}>
+        <div className={styles.formItem}>
+          <label htmlFor="username">Username</label>
+
+            <Input id="username" name="username" placeholder="Enter username"/>
+
+          </div>
+          <div className={styles.formItem}>
+          <label htmlFor="password"> Password</label>
+            
+            <Input id="password" name="password" type="password" placeholder="Enter password"/>
+          
         </div>
-        <div>
-          <label>
-            password:
-            <input name="password" type="password" />
-          </label>
-        </div>
-        <button type="submit">submit</button>
+        <CustomButton type="primary" htmlType="submit" className={styles.button}>Log in</CustomButton>
+        <a href="#">Forgot password?</a>
       </form>
-    </>
+        </div>
+      </div>
+    </div>
   );
 };

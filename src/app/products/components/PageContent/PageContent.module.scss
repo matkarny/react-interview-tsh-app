@@ -4,7 +4,10 @@
   padding: $margin-size/2 $margin-size;
   background-color: $background-color;
   padding-bottom: $margin-size/2 - 16px;
-  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include mobile{
     padding: $margin-size-mobile
