@@ -1,23 +1,19 @@
-import { Card } from 'components/Card/Card';
-import { CustomButton } from 'components/CustomButton/CustomButton';
+import CustomCard from 'components/CustomCard/CustomCard';
+import CustomButton from 'components/CustomButton/CustomButton';
+import CustomModal  from 'components/CustomModal/CustomModal';
 import { IProduct } from 'interfaces/product';
-import React, { useState } from 'react';
-import star from 'data/star.svg'
-import starOutlined from 'data/star-outlined.svg'
-
-import styles from './ProductCard.module.scss'
+import React from 'react';
 import { Star } from 'components/Star/Star';
-import Modal from 'antd/lib/modal/Modal';
+import styles from './ProductCard.module.scss';
 import useModalVisible from 'hooks/useModalVisible';
-import { CustomModal } from 'components/CustomModal/CustomModal';
-
-
+import SkeletonImage from 'antd/lib/skeleton/Image';
+import Skeleton from 'antd/lib/skeleton';
 
 export const ProductCard: React.FC<IProduct> = ({ image, name, description, rating, promo, active }) => {
     const { modalVisible, onOpen, onClose } = useModalVisible()
-    return <Card>
-        <img src={image} alt={`${name} picture`} className={active ? styles.image : styles.imageDisabled} />
-        <div className={styles.productCard}>
+    return <CustomCard>
+        {image ? <img src={image} alt={`${name}`} className={active ? styles.image : styles.imageDisabled} /> : <SkeletonImage />}
+        {(name && description && rating) ? <div className={styles.productCard}>
             <h3>{name}</h3>
             <p>{description}</p>
             <div>
@@ -25,14 +21,14 @@ export const ProductCard: React.FC<IProduct> = ({ image, name, description, rati
                     {[...Array(rating)].map((s, i) => <Star key={`star${i}`} />)}
                     {[...Array(5 - rating)].map((s, i) => <Star key={`starOutlined${i}`} outlined />)}
                 </div>
-                <CustomButton type="primary" onClick={onOpen} disabled={!active}>{!active ? 'Unavailable' : 'Show details' }</CustomButton>
+                <CustomButton type="primary" onClick={onOpen} disabled={!active}>{!active ? 'Unavailable' : 'Show details'}</CustomButton>
             </div>
-        </div>
+        </div> : <Skeleton active />}
         <CustomModal visible={modalVisible} onClose={onClose} image={image}>
             <h3>{name}</h3>
             <p>{description}</p>
         </CustomModal>
         {promo && <span className={styles.promo}> Promo </span>}
-    </Card>
+    </CustomCard>
 
 };

@@ -4,3 +4,11 @@ export interface IPaginationLinks {
     next: string;
     previous: string;
 }
+
+export interface IPaginationInfo{
+    totalItems: number;
+    itemCount: number;
+    itemsPerPage: string,
+    totalPages: number,
+    currentPage: string
+}

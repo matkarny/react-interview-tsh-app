@@ -1,11 +1,12 @@
 @import "../../app/theme.scss";
-.button{
+
+.button {
   align-self: center;
   width: 100%;
   button {
     width: 100%;
   }
-  :global(.ant-btn){
+  :global(.ant-btn) {
     height: 38px;
   }
 }

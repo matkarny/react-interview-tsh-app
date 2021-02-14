@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import { Button, Pagination } from 'antd';
+import { Spinner } from 'components/Spinner/Spinner';
+import { useFetchProducts } from 'hooks/useFetchProducts';
+import React, { useContext } from 'react';
+import { Context } from 'store/AppStore';
+import styles from './CustomPagination.module.scss';
 
-import { Button, Pagination, Table } from 'antd';
-import styles from './CustomPagination.module.scss'
 
 
 export const CustomPagination: React.FC = () => {
-  const [page, setPage] = useState(1)
-  const lastPage = 80 / 8
+  const { setPage } = useFetchProducts()
+  const { state } = useContext(Context);
+  const { paginationInfo, page } = state
+  const setToFirst = () => setPage(1)
+  const setToLast = () => paginationInfo && setPage(paginationInfo.totalPages)
 
   function itemRender(current: number, type: string, originalElement: React.ReactElement<HTMLElement>) {
     if (type === 'prev') {
@@ -23,9 +29,12 @@ export const CustomPagination: React.FC = () => {
     }
     return originalElement;
   }
-  return <div className={styles.paginationWrapper}>
-    <Button type="text" onClick={() => setPage(1)} disabled={page === 1} className={styles.firstPage}> First </Button>
-    <Pagination size="small" current={page} total={80} itemRender={itemRender} showSizeChanger={false} defaultPageSize={8} onChange={(p) => setPage(p)} />
-    <Button type="text" onClick={() => setPage(lastPage)} disabled={page === lastPage} className={styles.lastPage}> Last </Button>
-  </div>
+  return <>{paginationInfo ? <div className={styles.paginationWrapper}>
+    <Button type="text" onClick={setToFirst} className={styles.firstPage}> First </Button>
+    <Pagination size="small" current={page} total={paginationInfo.totalItems} itemRender={itemRender} showSizeChanger={false} defaultPageSize={paginationInfo.itemCount} onChange={(p) => setPage(p)} />
+    <Button type="text" onClick={setToLast} disabled={page === paginationInfo.totalPages} className={styles.lastPage}> Last </Button>
+  </div> : <Spinner />}
+  </>
 };
+
+export default CustomPagination

@@ -11,16 +11,17 @@ interface ICustomModal {
     children: React.ReactNode
 }
 
-
 export const CustomModal: React.FC<ICustomModal> = ({ visible, onClose, children, image }) => {
     const maskStyle = {
         backgroundColor: '#1A1B1D',
         opacity: '0.9'
     }
     return <Modal visible={visible} onCancel={onClose} closeIcon={<Close />} className={styles.modal} footer={null} maskStyle={maskStyle}>
-        {image && <img src={image} className={styles.image} alt="product image" />}
+        {image && <img src={image} className={styles.image} alt="product" />}
         <div className={styles.modalBody}>
             {children}
         </div>
     </Modal>
 };
+
+export default CustomModal

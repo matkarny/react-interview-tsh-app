@@ -46,3 +46,5 @@ export const CustomButton: React.FC<IButton> = ({ children, type, disabled, clas
     return <div className={clsx(pickStyle(type), className)}><Button type={pickType(type)}  disabled={disabled} onClick={onClick} htmlType={htmlType}>{children}</Button></div>
 
 };
+
+export default CustomButton

@@ -1,6 +1,6 @@
 import React from 'react';
+import styles from './PageContent.module.scss';
 
-import styles from './PageContent.module.scss'
 
 
 interface IContent{

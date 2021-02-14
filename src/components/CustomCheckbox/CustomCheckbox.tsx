@@ -1,13 +1,9 @@
-import Checkbox from 'antd/lib/checkbox/Checkbox';
+import Checkbox, { CheckboxProps } from 'antd/lib/checkbox/Checkbox';
 import React from 'react';
+import styles from './CustomCheckbox.module.scss';
 
-import styles from './CustomCheckbox.module.scss'
-
-interface ICustomCheckbox {
-    children: React.ReactNode
-}
-
-export const CustomCheckbox: React.FC<ICustomCheckbox> = ({ children }) => {
-    return <Checkbox className={styles.checkboxWrapper}> {children}</Checkbox>
-
+export const CustomCheckbox: React.FC<CheckboxProps> = (props) => {
+    return <Checkbox className={styles.checkboxWrapper} {...props} />
 };
+
+export default CustomCheckbox
