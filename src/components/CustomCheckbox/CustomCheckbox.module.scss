@@ -16,12 +16,17 @@
       height: 11.73px;
 
       left: 33%;
-      border: 1px solid #ffffff;
+      border: 2px solid #ffffff;
+      border-top-color: transparent;
+      border-left-color: transparent;
     }
   }
   :global(.ant-checkbox-checked) {
     &::after {
       border-radius: $border-radius;
+      border-top-color: transparent !important;
+      border-left-color: transparent !important;
+      border-width: 2px !important
     }
   }
   :global(.ant-checkbox-checked .ant-checkbox-inner) {
