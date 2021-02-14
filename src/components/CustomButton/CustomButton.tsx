@@ -1,9 +1,8 @@
 import React from 'react';
 
 import styles from './CustomButton.module.scss'
-import Button from 'antd/lib/button';
+import Button, { ButtonHTMLType } from 'antd/lib/button/button';
 import clsx from 'clsx'
-import { ButtonHTMLType } from 'antd/lib/button/button';
 
 interface IButton {
     children: React.ReactNode
@@ -40,7 +39,6 @@ const pickStyle = (type: string) =>{
             return styles.buttonOutlined
     }
 }
-
 
 export const CustomButton: React.FC<IButton> = ({ children, type, disabled, className, htmlType,  onClick }) => {
     return <div className={clsx(pickStyle(type), className)}><Button type={pickType(type)}  disabled={disabled} onClick={onClick} htmlType={htmlType}>{children}</Button></div>

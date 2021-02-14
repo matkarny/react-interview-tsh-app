@@ -1,13 +1,13 @@
 @import "../../app/theme.scss";
 
-.image{
+.image {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: $border-radius-doubled $border-radius-doubled 0 0;
 }
 
-.imageDisabled{
+.imageDisabled {
   @extend .image;
   filter: grayscale(100%);
 }
@@ -20,12 +20,11 @@
   height: 220px;
 }
 
-
-.starsWrapper{
+.starsWrapper {
   margin-bottom: 18px;
 }
 
-.promo{
+.promo {
   position: absolute;
   left: 0;
   top: 23px;

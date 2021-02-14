@@ -1,7 +1,7 @@
 import { IPaginationInfo } from "./pagination";
 import { IProduct } from "./product";
 
-export interface IProductStateContext{
+export interface IProductStateContext {
     loading: boolean
     products: IProduct[] | null
     paginationInfo: IPaginationInfo | null,
@@ -13,6 +13,6 @@ export interface IProductStateContext{
 }
 
 export type IProductContext = {
-    state: IProductStateContext, 
+    state: IProductStateContext,
     dispatch: React.Dispatch<any>
 }

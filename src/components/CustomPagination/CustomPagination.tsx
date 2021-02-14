@@ -1,15 +1,16 @@
-import { Button, Pagination } from 'antd';
-import { Spinner } from 'components/Spinner/Spinner';
-import { useFetchProducts } from 'hooks/useFetchProducts';
+import Button from 'antd/lib/button/button'
+import Pagination from 'antd/lib/pagination/Pagination'
+import Spinner from 'components/Spinner/Spinner';
+import useFetchProducts from 'hooks/useFetchProducts';
 import React, { useContext } from 'react';
-import { Context } from 'store/AppStore';
+import { AppContext } from 'store/AppStore';
 import styles from './CustomPagination.module.scss';
 
 
 
 export const CustomPagination: React.FC = () => {
   const { setPage } = useFetchProducts()
-  const { state } = useContext(Context);
+  const { state } = useContext(AppContext);
   const { paginationInfo, page } = state
   const setToFirst = () => setPage(1)
   const setToLast = () => paginationInfo && setPage(paginationInfo.totalPages)

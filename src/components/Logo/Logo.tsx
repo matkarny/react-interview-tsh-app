@@ -6,7 +6,6 @@ interface ILogo {
 }
 export const Logo:React.FC<ILogo> = ({className}) => {
     return <Title className={className}>join.tsh.io</Title>
-
 };
 
 export default Logo

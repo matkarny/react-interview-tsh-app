@@ -1,7 +1,6 @@
 @import "../../app/theme.scss";
 
-
-.content{
+.content {
   padding: $margin-size/2 $margin-size;
   background-color: $background-color;
   padding-bottom: $margin-size/2 - 16px;
@@ -10,8 +9,7 @@
   align-items: center;
   justify-content: center;
 
-  @include mobile{
-    padding: $margin-size-mobile
+  @include mobile {
+    padding: $margin-size-mobile;
   }
-
 }

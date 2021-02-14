@@ -1,8 +1,8 @@
-import { ReactComponent as StarOutlinedIcon } from 'data/star-outlined.svg';
-import { ReactComponent as StarIcon } from 'data/star.svg';
-
 import React from 'react';
 import styles from './Star.module.scss';
+
+import { ReactComponent as StarOutlinedIcon } from 'data/star-outlined.svg';
+import { ReactComponent as StarIcon } from 'data/star.svg';
 
 interface IStar {
     outlined?: boolean

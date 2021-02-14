@@ -1,58 +1,58 @@
 @import "../../app/theme.scss";
 
-.pageWrapper{
+.pageWrapper {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  .image{
+  .image {
     width: 100%;
-    @include mobile{
+    @include mobile {
       display: none;
     }
   }
 }
 
-.loginWrapper{
+.loginWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   margin: $small-margin-size 212px 0 $margin-size;
-  @include mobile{
+  @include mobile {
     margin: 40px $margin-size-mobile;
     justify-content: flex-start;
   }
-  .logo{
+  .logo {
     align-self: flex-start;
     margin-bottom: 103px;
   }
 
-  a{
+  a {
     color: $disabled-color;
     text-decoration: underline;
   }
 }
 
-.formWrapper{
+.formWrapper {
   height: 70%;
   gap: 22px;
   width: 496px;
-  @include mobile{
+  @include mobile {
     width: 100%;
   }
 }
 
-.formItem{
+.formItem {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  &:first-of-type{
+  &:first-of-type {
     margin-bottom: 22px;
     margin-top: 29px;
   }
 }
 
-.button{
+.button {
   margin-top: 56px;
   margin-bottom: 16px;
 }

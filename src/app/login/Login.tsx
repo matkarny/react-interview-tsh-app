@@ -1,12 +1,12 @@
-import { CustomButton } from 'components/CustomButton/CustomButton';
-import Input from 'components/CustomInput/CustomInput';
-import Logo from 'components/Logo/Logo';
-import { Title } from 'components/Title/Title';
-import loginPicture from 'data/login-picture.png';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import CustomButton from 'components/CustomButton/CustomButton';
+import CustomInput from 'components/CustomInput/CustomInput';
+import Logo from 'components/Logo/Logo';
+import Title from 'components/Title/Title';
 import { AppRoute } from 'routing/AppRoute.enum';
 import styles from './Login.module.scss';
+import loginPicture from 'data/login-picture.png';
 
 
 
@@ -22,15 +22,11 @@ export const Login = () => {
           <form onSubmit={() => history.push(AppRoute.home)}>
             <div className={styles.formItem}>
               <label htmlFor="username">Username</label>
-
-              <Input id="username" name="username" placeholder="Enter username" />
-
+              <CustomInput id="username" name="username" placeholder="Enter username" />
             </div>
             <div className={styles.formItem}>
               <label htmlFor="password"> Password</label>
-
-              <Input id="password" name="password" type="password" placeholder="Enter password" />
-
+              <CustomInput id="password" name="password" type="password" placeholder="Enter password" />
             </div>
             <CustomButton type="primary" htmlType="submit" className={styles.button}>Log in</CustomButton>
             <a href="#" >Forgot password?</a>

@@ -1,18 +1,9 @@
-import { IProductContext } from "interfaces/store";
 import React, { createContext, useReducer } from "react";
 import { productReducer } from "reducer/productReducer";
+import { productInitialState } from "state/product";
+import { IProductContext } from "interfaces/store";
 
-export const productInitialState = {
-    loading: true,
-    products: null,
-    paginationInfo: null,
-    promo: false,
-    active: false,
-    search: '',
-    page: 1,
-
-}
-export const Context = createContext<IProductContext
+export const AppContext = createContext<IProductContext
 >({
     state: productInitialState,
     dispatch: () => null
@@ -20,13 +11,13 @@ export const Context = createContext<IProductContext
 
 export const store = createContext(productInitialState);
 
-const AppStore:React.FC<any> = ({children}) => {
+const AppStore: React.FC = ({ children }) => {
     const [state, dispatch] = useReducer(productReducer, productInitialState);
-    
+
     return (
-        <Context.Provider value={{state, dispatch}}>
+        <AppContext.Provider value={{ state, dispatch }}>
             {children}
-        </Context.Provider>
+        </AppContext.Provider>
     )
 };
 

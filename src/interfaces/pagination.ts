@@ -5,7 +5,7 @@ export interface IPaginationLinks {
     previous: string;
 }
 
-export interface IPaginationInfo{
+export interface IPaginationInfo {
     totalItems: number;
     itemCount: number;
     itemsPerPage: string,
