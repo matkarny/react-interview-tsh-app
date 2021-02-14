@@ -40,7 +40,6 @@
   position: absolute;
   width: 88px;
   right: $margin-size;
-  top: calc(($small-margin-size)*1.5);
 
   @include mobile{
     right: $margin-size-mobile;
