@@ -19,7 +19,7 @@ export const Products = () => {
       <Header />
       <PageContent>
         <Row gutter={[32, 32]} justify="center" align="middle">
-          {loading ? <Col span={2}><Spinner /></Col> : (products && !!products.length) ? products.map((product: IProduct) => <Col span={24} lg={6} key={product.name}><ProductCard {...product} /></Col>) : <Col span={24}><EmptyPage /></Col>}
+          {loading ? <Col span={2}><Spinner /></Col> : (products && !!products.length) ? products.map((product: IProduct) => <Col span={24} lg={6} key={product.name}><ProductCard {...product} /></Col>) : <Col span={32}><EmptyPage /></Col>}
         </Row>
       </PageContent>
       {(products && !!products.length) && <Footer />}

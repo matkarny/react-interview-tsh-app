@@ -10,7 +10,7 @@ export function productReducer(state: IProductStateContext, action: any) {
         case ProductAction.setPromoState:
             return { ...state, promo: !state.promo, page: 1 };
         case ProductAction.setActiveState:
-            return { ...state, active: !state.promo, page: 1 };
+            return { ...state, active: !state.active, page: 1 };
         case ProductAction.setSearch:
             return { ...state, search: action.payload, page: 1, };
         case ProductAction.setPage:

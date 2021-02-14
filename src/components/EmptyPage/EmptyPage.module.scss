@@ -1,13 +1,16 @@
 @import "../../app/theme.scss";
 
-
-.emptyCard{
+.emptyCard {
   align-items: center;
   height: 344px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
   box-sizing: border-box;
+  width: 600px;
+  @include mobile {
+    width: 100%;
+    padding: 60px;
+  }
 }
